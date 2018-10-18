@@ -67,9 +67,9 @@ class MYEstimatorModel(object):
         print("test accuracy is : %g %%" %(accuracy_score*100))
 
         predict_data = self.gen_predict_data()
-        predictions = estimator.predict(predict_data,"数字")
+        predictions = estimator.predict(predict_data)
         for i in predictions:
-            print("prediction-{}:\n {}".format(i+1,predictions))
+            print("prediction:\n {}".format(i))
 
     def gen_train_data(self):
         return tf.estimator.inputs.numpy_input_fn(
